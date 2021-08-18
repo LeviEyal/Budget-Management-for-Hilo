@@ -1,15 +1,14 @@
 import firebase from 'firebase';
  
 const firebaseConfig = {
-   apiKey: "AIzaSyCBnBOEG8eh-hXuli25TF0yBC7UJTT6pQU",
-   authDomain: "hilo-assignment.firebaseapp.com",
-   databaseURL: "https://hilo-assignment-default-rtdb.firebaseio.com",
-   projectId: "hilo-assignment",
-   storageBucket: "hilo-assignment.appspot.com",
-   messagingSenderId: "565124575625",
-   appId: "1:565124575625:web:186bbed44b9c233b067158",
-   measurementId: "G-TKH1PREGDT"
-};
+   apiKey: "AIzaSyDWJR9TVUilNYZrzvkRZJ4P_JzZlLRUzgM",
+   authDomain: "hilobudget.firebaseapp.com",
+   databaseURL: "https://hilobudget-default-rtdb.asia-southeast1.firebasedatabase.app",
+   projectId: "hilobudget",
+   storageBucket: "hilobudget.appspot.com",
+   messagingSenderId: "700318791100",
+   appId: "1:700318791100:web:b8988c6fbdfdac199427b9"
+ };
 
  // Initialize Firebase
 firebase.initializeApp(firebaseConfig);

@@ -13,6 +13,10 @@
    box-shadow: 3px 5px #8888883b;
 }
 
+.tt button:focus {
+   background-color: #000000;
+}
+
 button {
    border:none;
    background-color: #F6F9FF;
@@ -30,6 +34,7 @@ button:hover {
    background-color: #888888;
    color: white;
 }
+
 button:focus {
    cursor: pointer;
    border:none;
