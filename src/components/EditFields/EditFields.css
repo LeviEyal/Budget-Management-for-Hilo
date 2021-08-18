@@ -1,0 +1,20 @@
+.combo {
+   background-color: #458cfe;
+   color: white;
+   border-radius: 13px;
+   margin: 20px;
+   padding: 10px;
+   width: 200px;
+   margin-inline: 20%;
+}
+
+.combo option {
+   background-color: #E8E8E8;
+   color: dimgray;
+   border: 1px solid rgb(34, 18, 18);
+}
+
+.combo option:hover {
+   background-color: #E8E8E8;
+   color: dimgray;
+}
