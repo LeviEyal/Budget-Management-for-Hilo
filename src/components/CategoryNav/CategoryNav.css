@@ -1,0 +1,37 @@
+
+.navButton {
+   text-align: center;
+   vertical-align: center;
+}
+
+.t {
+   display: inline;
+   background-color: #F6F9FF;
+   font-size: 50px;
+   border: 3px solid #F6F9FF;
+   border-radius: 30px;
+   box-shadow: 3px 5px #8888883b;
+}
+
+button {
+   border:none;
+   background-color: #F6F9FF;
+   color: none;
+   border-radius: 30px;
+   font-size: 30px;
+   margin: 10px;
+   margin-top: 40px;
+}
+
+button:hover {
+   cursor: pointer;
+   border:none;
+   background-color: #888888;
+   color: white;
+}
+button:focus {
+   cursor: pointer;
+   border:none;
+   background-color: #458cfe;
+   color: white;
+}
