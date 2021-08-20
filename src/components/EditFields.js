@@ -3,20 +3,22 @@ import "./EditFields.css";
 import FieldForm from "./FieldForm";
 import firebase from "../Firebase";
 
-export default function EditFields(param) {
-  console.log(param.op);
+export default function EditFields(props) {
 
   const [fields, setfields] = useState([]);
+  const [userData, setUserData] = useState({});
 
   function getData() {
     const dbRef = firebase.database().ref();
     dbRef
-      .child(param.op)
+      .child(props.category)
       .get()
       .then((snapshot) => {
         if (snapshot.exists()) {
-          console.log(snapshot);
           setfields(snapshot.val());
+          console.log(snapshot.val());
+        } else {
+          console.log("Can't fatch the fields array from DB");
         }
       })
       .catch((error) => {
@@ -25,8 +27,8 @@ export default function EditFields(param) {
   }
 
   useEffect(() => {
-    if(param.op) getData();
-  }, [param.op]);
+    if(props.category) getData();
+  }, [props.category]);
 
   return (
     <div>
@@ -35,7 +37,11 @@ export default function EditFields(param) {
           return <option key={f}>{f}</option>;
         })}
       </select>
-      <FieldForm />
+      <FieldForm userData={userData} setUserData={setUserData} />
+      
+      <button className="add-btn">+ Add</button>
+      <br />
+      <button className="submit-btn">Submit</button>
     </div>
   );
 }

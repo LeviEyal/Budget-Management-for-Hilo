@@ -2,24 +2,27 @@ import React from "react";
 import "./FieldForm.css";
 
 
-export default function FieldForm() {
+export default function FieldForm(props) {
+
+  function setDate(field, value) {
+    props.setUserData();
+  }
+
   return (
     <div className="field-form">
       <form>
-        <p>Description</p>
-        <input type="text" />
-        <p>Date</p>
-        <input type="text" />
-        <p>Amount of Money</p>
-        <input type="text" />
-        <p>Note</p>
-        <input type="text" />
-        <br /><br /><br />
-        <br /><br />
-        <button className="add-btn">+ Add</button>
-        <br />
-        <button className="submit-btn">Submit</button>
-      </form>
+        <label htmlFor="Description">Description</label><br/>
+        <input type="text" id="Description" name="Description"/><br/><br/>
+          
+        <label htmlFor="date">Date</label><br/>
+        <input type="date" id="date" name="date"/><br/><br/>
+        
+        <label htmlFor="amount">Amount of Money</label><br/>
+        <input type="number" id="amount" name="amount"/><br/><br/>
+        
+        <label htmlFor="note">Note</label><br/>
+        <input type="text" id="note" name="note"/><br/><br/>
+      </form>        
     </div>
   );
 }
