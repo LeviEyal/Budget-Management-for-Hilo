@@ -3,24 +3,65 @@ import "./CategoryNav.css";
 import EditFields from "./EditFields";
 
 export default function CategoryNav() {
-  const [op, setOp] = useState("");
+  const [category, setCategory] = useState("");
+  const [userData, setUserData] = useState({});
 
   return (
     <div>
       <div className="navButton">
-        <div className="t">
-          <button onClick={() => setOp("income")}>Income</button>
-          <button onClick={() => setOp("expenses")}>Expenses</button>
+        <div className="wrapper">
+          <input
+            type="radio"
+            name="incomeOrExpenses"
+            className="incomeOrExpenses"
+            id="income"
+            onClick={() => setCategory("income")}
+          />
+          <label for="income" className="incomeOrExpenses income">
+            Income
+          </label>
+          <input
+            type="radio"
+            name="incomeOrExpenses"
+            className="incomeOrExpenses"
+            id="expenses"
+            onClick={() => setCategory("expenses")}
+          />
+          <label for="expenses" className="incomeOrExpenses expenses">
+            Expenses
+          </label>
         </div>
-				<br />
-        {op.startsWith("expenses") ? (
-					<div className="t tt">
-            <button onClick={() => setOp("expenses_monthly")}>Monthly</button>
-            <button onClick={() => setOp("expenses_semester")}>Semester</button>
+        <br />
+        {category.startsWith("expenses") ? (
+          <div className="navButton">
+          <div className="wrapper">
+            <input
+              type="radio"
+              name="monthlyOrSemester"
+              className="monthlyOrSemester"
+              id="monthly"
+              onClick={() => setCategory("expenses_monthly")}
+            />
+            <label for="monthly" className="incomeOrExpenses monthly">
+              Monthly
+            </label>
+            <input
+              type="radio"
+              name="monthlyOrSemester"
+              className="monthlyOrSemester"
+              id="semester"
+              onClick={() => setCategory("expenses_semester")}
+            />
+            <label for="semester" className="monthlyOrSemester semester">
+              Semester
+            </label>
+          </div>
+
           </div>
         ) : null}
       </div>
-			<EditFields op={ op }/>
+
+      {category === "" ? null : <EditFields category={category} />}
     </div>
   );
 }

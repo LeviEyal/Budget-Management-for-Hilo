@@ -2,9 +2,10 @@
 .navButton {
    text-align: center;
    vertical-align: center;
+   margin: 20px;
 }
 
-.t {
+.wrapper {
    display: inline;
    background-color: #F6F9FF;
    font-size: 35px;
@@ -13,11 +14,7 @@
    box-shadow: 3px 5px #8888883b;
 }
 
-.tt button:focus {
-   background-color: #000000;
-}
-
-button {
+.incomeOrExpenses , .monthlyOrSemester{
    border:none;
    background-color: #F6F9FF;
    color: none;
@@ -25,19 +22,25 @@ button {
    font-size: 30px;
    margin: 15px;
    margin-top: 40px;
-   padding-inline: 20px;
+   padding-inline: 8px;
 }
 
-button:hover {
+.incomeOrExpenses:hover, .monthlyOrSemester:hover {
    cursor: pointer;
-   border:none;
-   background-color: #888888;
+}
+
+input[type="radio"]{
+   display: none;
+}
+
+#income:checked:checked ~ .income,
+#expenses:checked:checked ~ .expenses{
+   background-color: #458cfe;
    color: white;
 }
 
-button:focus {
-   cursor: pointer;
-   border:none;
-   background-color: #458cfe;
+#monthly:checked:checked ~ .monthly,
+#semester:checked:checked ~ .semester{
+   background-color: #000000;
    color: white;
 }
