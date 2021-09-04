@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 export default function FieldsSelector({fields, setCurrentField}) {
 
+  useEffect(() => {
+    if (fields[0]) setCurrentField(fields[0]);
+  }, [fields, setCurrentField])
+
   function chooseField(e) {
-    console.log("choosing filed " + e.target.value);
+    console.log("choosing field ", e.target.value);
     setCurrentField(e.target.value);
   }
 
