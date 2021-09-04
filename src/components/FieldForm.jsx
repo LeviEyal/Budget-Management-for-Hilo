@@ -1,26 +1,54 @@
 
-export default function FieldForm(props) {
+export default function FieldForm({category, currentField, userData, setUserData}) {
   
-  function setDate(field, value) {
-    props.setUserData();
+  /* Updates the user data when the student is filling the form */
+  function writeUserData(e) {
+    console.log(e);
+    const temp = userData;
+    if (!temp[category][currentField]) temp[category][currentField] = {};
+    temp[category][currentField][e.target.id] = e.target.value;
+    console.log("temp: ", temp);
+    setUserData(temp)
   }
 
   return (
     <div className="field-form">
       <form>
-        <h1>{props.currentField}</h1>
-        <label htmlFor="Description">Description</label><br/>
-        <input type="text" id="Description" name="Description" defaultValue="ewt"/><br/><br/>
+
+        <div className="column">
+          <label htmlFor="Description">Description</label><br/>
+          <input type="text" id="Description" name="Description" onChange={writeUserData}/><br/><br/>
+            
+          <label htmlFor="date">Date</label><br/>
+          <input type="date" id="date" name="date" onChange={writeUserData} /><br/><br/>
           
-        <label htmlFor="date">Date</label><br/>
-        <input type="date" id="date" name="date"/><br/><br/>
+          <label htmlFor="amount">Amount of Money</label><br/>
+          <input type="number" id="amount" name="amount" onChange={writeUserData} /><br/><br/>
+          
+          <label htmlFor="note">*Note</label><br/>
+          <input type="text" id="note" name="note" onChange={writeUserData} /><br /><br />
+        </div>
         
-        <label htmlFor="amount">Amount of Money</label><br/>
-        <input type="number" id="amount" name="amount"/><br/><br/>
-        
-        <label htmlFor="note">*Note</label><br/>
-        <input type="text" id="note" name="note"/><br/><br/>
+        <div className="column">
+          <label htmlFor="payment_method">Payment Method</label><br/>
+          <select id="payment_method" name="payment_method" onChange={writeUserData}>
+            <option key="cash">Cash</option>;
+            <option key="credit-card">Credit Card</option>;
+          </select>
+        </div>
+
       </form>
     </div>
   );
 }
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>Column 1</h2>
+    <p>Some text..</p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <h2>Column 2</h2>
+    <p>Some text..</p>
+  </div>
+</div>
