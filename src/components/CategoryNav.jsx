@@ -1,10 +1,5 @@
-import React, { useState } from "react";
-import "./CategoryNav.css";
-import EditFields from "./EditFields";
 
-export default function CategoryNav() {
-  const [category, setCategory] = useState("");
-  const [userData, setUserData] = useState({});
+export default function CategoryNav({category, setCategory}) {
 
   return (
     <div>
@@ -17,7 +12,7 @@ export default function CategoryNav() {
             id="income"
             onClick={() => setCategory("income")}
           />
-          <label for="income" className="incomeOrExpenses income">
+          <label htmlFor="income" className="incomeOrExpenses income">
             Income
           </label>
           <input
@@ -27,7 +22,7 @@ export default function CategoryNav() {
             id="expenses"
             onClick={() => setCategory("expenses")}
           />
-          <label for="expenses" className="incomeOrExpenses expenses">
+          <label htmlFor="expenses" className="incomeOrExpenses expenses">
             Expenses
           </label>
         </div>
@@ -42,7 +37,7 @@ export default function CategoryNav() {
               id="monthly"
               onClick={() => setCategory("expenses_monthly")}
             />
-            <label for="monthly" className="incomeOrExpenses monthly">
+            <label htmlFor="monthly" className="incomeOrExpenses monthly">
               Monthly
             </label>
             <input
@@ -52,7 +47,7 @@ export default function CategoryNav() {
               id="semester"
               onClick={() => setCategory("expenses_semester")}
             />
-            <label for="semester" className="monthlyOrSemester semester">
+            <label htmlFor="semester" className="monthlyOrSemester semester">
               Semester
             </label>
           </div>
@@ -61,7 +56,6 @@ export default function CategoryNav() {
         ) : null}
       </div>
 
-      {category === "" ? null : <EditFields category={category} />}
     </div>
   );
 }

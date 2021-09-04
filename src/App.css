@@ -1,5 +1,115 @@
 * {
-  margin: 0px;
-  padding: 0px;
+  padding: auto;
   font-family: 'Montserrat Alternates', sans-serif;
+}
+
+
+/* Header component: */
+.app-header {
+  padding: 60px;
+  text-align: center;
+  font-size: 20px;
+  background-color: #f6f9ff;
+  color: #458cfe;
+}
+.slogen {
+  color: black;
+  max-width: 360px;
+  margin: auto;
+}
+
+/* CategoryNav component: */
+.navButton {
+  text-align: center;
+  vertical-align: center;
+  margin: 20px;
+}
+.wrapper {
+  display: inline;
+  background-color: #F6F9FF;
+  font-size: 35px;
+  border: 3px solid #F6F9FF;
+  border-radius: 30px;
+  box-shadow: 3px 5px #8888883b;
+}
+.incomeOrExpenses , .monthlyOrSemester{
+  border:none;
+  background-color: #F6F9FF;
+  color: none;
+  border-radius: 30px;
+  font-size: 30px;
+  margin: 15px;
+  margin-top: 40px;
+  padding-inline: 8px;
+}
+.incomeOrExpenses:hover, .monthlyOrSemester:hover {
+  cursor: pointer;
+}
+input[type="radio"]{
+  display: none;
+}
+#income:checked:checked ~ .income,
+#expenses:checked:checked ~ .expenses{
+  background-color: #458cfe;
+  color: white;
+}
+#monthly:checked:checked ~ .monthly,
+#semester:checked:checked ~ .semester{
+  background-color: #000000;
+  color: white;
+}
+
+
+.bodyWrapper {
+  margin-inline: 20%;
+  margin-bottom: 70px;
+}
+
+/* FieldsSelector component: */
+.combo {
+  background-color: #458cfe;
+  color: white;
+  border-radius: 13px;
+  padding: 10px;
+  width: 200px;
+  margin-block: 20px;
+}
+.combo option {
+  background-color: #E8E8E8;
+  color: dimgray;
+  border: 1px solid rgb(34, 18, 18);
+}
+.combo option:hover {
+  background-color: #E8E8E8;
+  color: dimgray;
+}
+
+/* FieldForm component: */
+form input{
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  margin-block: 15px;
+}
+
+/* AddField component: */
+.add-btn {
+  cursor: pointer;
+  border:none;
+  background-color: #458cfe;
+  color: white;
+  padding: 10px;
+  margin-block: 15px;
+  border-radius: 13px;
+  box-shadow: 3px 5px #8888883b;
+}
+
+/* SubmitUserData component: */
+.submit-btn {
+  background-color: #000358;
+  color: #F5FBFB;
+  padding: 15px;
+  width: 250px;
+  border-radius: 13px;
+  box-shadow: 3px 5px #8888883b;
 }

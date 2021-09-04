@@ -1,5 +1,4 @@
 import React from 'react'
-import './Header.css'
 
 export default function Header() {
    return (
@@ -8,7 +7,7 @@ export default function Header() {
          <h1>____</h1>
          <br/>
          <h4 className="slogen">
-         Why not leveraging technology to save your time and allow you to utilize it for  focusing on what’s really matter?
+         Start saving money by being aware of your financial behavior.
          </h4>
       </header>
    )
