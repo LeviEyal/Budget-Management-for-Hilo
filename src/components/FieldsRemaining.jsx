@@ -1,6 +1,16 @@
-
-export default function FieldsRemaining(params) {
+export default function FieldsRemaining({ fields, userData }) {
   return (
-    <span>Fields Remaining </span>
-  )
+    <span className="column">
+      {fields
+        .filter(
+          (f) =>
+            !userData["income"][f] &&
+            !userData["expenses_monthly"][f] &&
+            !userData["expenses_semester"][f]
+        )
+        .map((f) => {
+          return <button className="field-remaining-btn">{f}</button>;
+        })}
+    </span>
+  );
 }
