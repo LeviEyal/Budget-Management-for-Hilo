@@ -1,6 +1,7 @@
 * {
   padding: auto;
   font-family: 'Montserrat Alternates', sans-serif;
+  box-sizing: border-box;
 }
 
 
@@ -67,6 +68,7 @@ input[type="radio"]{
 
 /* FieldsSelector component: */
 .combo {
+  display: inline;
   background-color: #458cfe;
   color: white;
   border-radius: 13px;
@@ -85,11 +87,28 @@ input[type="radio"]{
 }
 
 /* FieldForm component: */
-form input{
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+.field-form:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+form input {
   border: none;
   outline: none;
   border-bottom: 1px solid black;
   margin-block: 15px;
+}
+#payment_method {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  margin-block: 15px;
+  justify-content: right;
 }
 
 /* AddField component: */
