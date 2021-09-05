@@ -7,19 +7,25 @@
 
 /* Header component: */
 .app-header {
-  padding: 60px;
+  padding: 50px;
   text-align: center;
   font-size: 20px;
   background-color: #f6f9ff;
   color: #458cfe;
 }
-.slogen {
+#small-line {
+  margin: 0px;
+}
+#slogen {
   color: black;
   max-width: 360px;
   margin: auto;
 }
 
 /* CategoryNav component: */
+#category-nav {
+  margin: 40px;
+}
 .navButton {
   text-align: center;
   vertical-align: center;
@@ -74,7 +80,7 @@ input[type="radio"]{
   border-radius: 13px;
   padding: 10px;
   width: 200px;
-  margin-block: 20px;
+  margin: 20px;
 }
 .combo option {
   background-color: #E8E8E8;
@@ -84,6 +90,30 @@ input[type="radio"]{
 .combo option:hover {
   background-color: #E8E8E8;
   color: dimgray;
+}
+
+/* FieldsRemaining component: */
+.field-remaining-btn {
+  color: #E8E8E8;
+  background-color: #458cfe;
+  margin-right: 10px;
+  padding: 3px;
+  border-radius: 6px;
+  border: 0px;
+  cursor: pointer;
+}
+.current {
+  color: #000c20;
+  background-color: #fea845;
+}
+/* FieldsCompleted component: */
+.field-completed-btn {
+  color: #E8E8E8;
+  background-color: #000358;
+  margin-right: 10px;
+  padding: 3px;
+  border-radius: 6px;
+  border: 0px;
 }
 
 /* FieldForm component: */
@@ -102,6 +132,7 @@ form input {
   outline: none;
   border-bottom: 1px solid black;
   margin-block: 15px;
+  width: 30vh;
 }
 #payment_method {
   border: none;
@@ -109,6 +140,7 @@ form input {
   border-bottom: 1px solid black;
   margin-block: 15px;
   justify-content: right;
+  width: 30vh;
 }
 
 /* AddField component: */
@@ -131,4 +163,18 @@ form input {
   width: 250px;
   border-radius: 13px;
   box-shadow: 3px 5px #8888883b;
+  cursor: pointer;
+}
+
+
+.column-3 {
+  float: left;
+  width: 33.33%;
+}
+
+.data-table {
+  background-color: #000358;
+  margin-top: 300px;
+  margin-bottom: 300px;
+  border-radius: 20px;
 }

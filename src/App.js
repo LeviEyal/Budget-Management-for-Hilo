@@ -7,6 +7,7 @@ import FieldsCompleted from "./components/FieldsCompleted";
 import FieldsRemaining from "./components/FieldsRemaining";
 import AddField from "./components/AddField";
 import SubmitUserData from "./components/SubmitUserData";
+import DataTable from "./components/DataTable";
 import "./App.css";
 import firebase from "./Firebase";
 
@@ -15,7 +16,6 @@ export default function App() {
   /* All states: */
   const [category, setCategory] = useState("");
   const [fields, setFields] = useState([]);
-  // const [fields, setFields] = useState([]);
   const [currentField, setCurrentField] = useState("");
   const [userData, setUserData] = useState({"expenses_monthly":{}, "expenses_semester":{}, "income":{}});
 
@@ -36,27 +36,29 @@ export default function App() {
     <div className="App">
       <Header />
       <div className="bodyWrapper">
-        <CategoryNav category={category} setCategory={setCategory} />
+        <CategoryNav category={category} setCategory={setCategory}/>
         {
           fields[category] ? (
             <>
-              <div>
+              <div className="temp">
                 <FieldsSelector fields={fields[category]} setCurrentField={setCurrentField} />
-                <FieldsRemaining/>
+                <FieldsRemaining fields={fields[category]} userData={userData} currentField={currentField} setCurrentField={setCurrentField}/>
               </div>
+              <br />
               <FieldForm category={category} currentField={currentField} userData={userData} setUserData={setUserData} />
-              <FieldsCompleted />
+              <FieldsCompleted fields={fields[category]} userData={userData}/>
               <AddField />
               <SubmitUserData userData={userData}/>
+              <DataTable userData={userData}/>
             </>
           ) : null
         }
       </div>
-      <div>
+      {/* <div>
           <pre>
           {JSON.stringify(userData, null, 2)}
-          </pre>
-      </div>
+        </pre>
+      </div> */}
     </div>
   );
 }

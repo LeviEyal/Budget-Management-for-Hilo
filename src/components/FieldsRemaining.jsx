@@ -1,6 +1,11 @@
-export default function FieldsRemaining({ fields, userData }) {
+export default function FieldsRemaining({
+  fields,
+  userData,
+  currentField,
+  setCurrentField,
+}) {
   return (
-    <span className="column">
+    <span className="right">
       {fields
         .filter(
           (f) =>
@@ -9,7 +14,19 @@ export default function FieldsRemaining({ fields, userData }) {
             !userData["expenses_semester"][f]
         )
         .map((f) => {
-          return <button className="field-remaining-btn">{f}</button>;
+          return (
+            <button
+              key={f}
+              className={
+                f === currentField
+                  ? "current field-remaining-btn"
+                  : "field-remaining-btn"
+              }
+              onClick={() => setCurrentField(f)}
+            >
+              {f}
+            </button>
+          );
         })}
     </span>
   );

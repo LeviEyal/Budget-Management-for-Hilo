@@ -11,7 +11,7 @@ export default function FieldsCompleted({ fields, userData }) {
             userData["expenses_semester"][f]
         )
         .map((f) => {
-          return <button className="field-completed-btn">{f}</button>;
+          return <button key={f} className="field-completed-btn">{f}</button>;
         })}
     </div>
   )
