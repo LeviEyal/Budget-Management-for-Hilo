@@ -42,23 +42,18 @@ export default function App() {
             <>
               <div className="temp">
                 <FieldsSelector fields={fields[category]} setCurrentField={setCurrentField} />
-                <FieldsRemaining fields={fields[category]} userData={userData} currentField={currentField} setCurrentField={setCurrentField}/>
+                {/* <FieldsRemaining fields={fields[category]} userData={userData} currentField={currentField} setCurrentField={setCurrentField}/> */}
               </div>
               <br />
               <FieldForm category={category} currentField={currentField} userData={userData} setUserData={setUserData} />
-              <FieldsCompleted fields={fields[category]} userData={userData}/>
+              <FieldsCompleted fields={fields[category]} userData={userData} setCurrentField={setCurrentField}/>
               <AddField />
               <SubmitUserData userData={userData}/>
-              <DataTable userData={userData}/>
             </>
           ) : null
         }
       </div>
-      {/* <div>
-          <pre>
-          {JSON.stringify(userData, null, 2)}
-        </pre>
-      </div> */}
+      <DataTable userData={userData}/>
     </div>
   );
 }

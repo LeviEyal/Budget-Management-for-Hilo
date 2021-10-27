@@ -1,14 +1,14 @@
 export default function DataTable({ userData }) {
   return (
-    <div className="data-table">
+    <div id="data-table">
       <div className="column-3">
         <h4>Income</h4>
         {
           Object.keys(userData["income"]).map((key, index) => (
             userData["income"][key].amount ? 
-            <div>
+            <div className="data-entry">
               <span className="field-remaining-btn">{key}</span>
-              <span className="field-remaining-btn">{userData["income"][key].amount}</span>
+              <span className="field-remaining-btn">${userData["income"][key].amount}</span>
             </div> : null
           ))
         }
@@ -18,9 +18,9 @@ export default function DataTable({ userData }) {
         {
           Object.keys(userData["expenses_monthly"]).map((key, index) => (
             userData["expenses_monthly"][key].amount ? 
-            <div>
+            <div className="data-entry">
               <span className="field-remaining-btn">{key}</span>
-              <span className="field-remaining-btn">{userData["expenses_monthly"][key].amount}</span>
+              <span className="field-remaining-btn">${userData["expenses_monthly"][key].amount}</span>
             </div> : null
           ))
         }
@@ -30,9 +30,9 @@ export default function DataTable({ userData }) {
         {
           Object.keys(userData["expenses_semester"]).map((key, index) => (
             userData["expenses_semester"][key].amount ? 
-            <div>
+            <div className="data-entry">
               <span className="field-remaining-btn">{key}</span>
-              <span className="field-remaining-btn">{userData["expenses_semester"][key].amount}</span>
+              <span className="field-remaining-btn">${userData["expenses_semester"][key].amount}</span>
             </div> : null
           ))
         }

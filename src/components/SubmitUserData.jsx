@@ -5,12 +5,12 @@ export default function SubmitUserData({userData}) {
   function writeUserDataToFirebase(params) {
     const dbRef = firebase.database().ref();
     dbRef.child('users/user1')
-        .set(userData);
+        .set(userData).then(() => alert("Data successfully submitted")).catch(reason => alert(reason));
   }
 
   return (
     <div>
-      <button className="submit-btn" onClick={writeUserDataToFirebase}>Submit</button>
+      <button form="data-form" type="submit" className="submit-btn">Submit</button>
     </div>
   )
 }

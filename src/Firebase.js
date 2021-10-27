@@ -15,3 +15,6 @@ firebase.initializeApp(firebaseConfig);
 // const db = firebase.firestore();
  
 export default firebase;
+
+//npm run build
+//firebase deploy

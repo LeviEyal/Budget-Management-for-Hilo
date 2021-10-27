@@ -114,6 +114,7 @@ input[type="radio"]{
   padding: 3px;
   border-radius: 6px;
   border: 0px;
+  cursor: pointer;
 }
 
 /* FieldForm component: */
@@ -166,15 +167,23 @@ form input {
   cursor: pointer;
 }
 
+#data-table {
+  width: 80%;
+  text-align: center;
+  background-color: #f6f9ff;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 30px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  height: 500px;
+}
 
 .column-3 {
   float: left;
   width: 33.33%;
 }
 
-.data-table {
-  background-color: #000358;
-  margin-top: 300px;
-  margin-bottom: 300px;
-  border-radius: 20px;
+.data-entry {
+  margin: 20px;
 }
