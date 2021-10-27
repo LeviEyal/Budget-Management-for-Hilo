@@ -1,3 +1,4 @@
+In-progress project for HiLo-Student (https://www.hilostudent.com)
 ## Description
 Budget management tool for student.
 involving:
