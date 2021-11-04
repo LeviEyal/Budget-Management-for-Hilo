@@ -17,7 +17,7 @@ export default function FieldForm({category, currentField, userData, setUserData
     setUserData(temp)
   }
   
-  useEffect(() => {
+  useEffect(() => { 
     try {
       descriptionRef.current.value = userData[category][currentField].Description;
     } catch (error) {
