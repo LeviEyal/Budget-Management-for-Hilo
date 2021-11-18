@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
-import firebase from "../Firebase";
+import axios from "axios";
+//server url:
+const serverUrl = process.env.development ? "http://localhost:3000" : "https://hilo-server.herokuapp.com";
 
 export default function FieldForm({category, currentField, userData, setUserData}) {
 
@@ -47,10 +49,13 @@ export default function FieldForm({category, currentField, userData, setUserData
 
   function submitData(e) {
     e.preventDefault();
-    console.log("sumbitted");
-    const dbRef = firebase.database().ref();
-    dbRef.child('users/user1')
-        .set(userData).then(() => alert("Data successfully submitted")).catch(reason => alert(reason));
+    //post request on postUserData endpoint at server-side
+    axios.post(`${serverUrl}/postUserData`, userData)
+      .then(res => {
+        alert("Data successfully submitted")
+      }).catch(err => {
+        console.log(err);
+      });
   }
 
   return (
