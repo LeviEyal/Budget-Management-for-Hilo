@@ -1,7 +1,7 @@
 import firebase from 'firebase';
  
 const firebaseConfig = {
-   apiKey: "env.firebase_apiKey",
+   apiKey: env.firebase_apiKey,
    authDomain: "hilobudget.firebaseapp.com",
    databaseURL: "https://hilobudget-default-rtdb.asia-southeast1.firebasedatabase.app",
    projectId: "hilobudget",
